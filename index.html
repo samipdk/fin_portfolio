@@ -171,7 +171,7 @@
   }
   .section-desc { font-size: 1rem; color: var(--muted); max-width: 580px; margin-bottom: 3.5rem; }
 
-  /* FINANCE-FIRST IDENTITY STRIP */
+  /* IDENTITY STRIP */
   .identity-strip {
     background: white;
     border-bottom: 1px solid var(--rule);
@@ -249,6 +249,62 @@
   }
   .project-card:hover { background: #faf9f6; }
   .project-card:hover .card-arrow { transform: translate(3px,-3px); }
+
+  /* FEATURED FP&A CARD — full-width special treatment */
+  .project-card.fpa-featured {
+    background: linear-gradient(135deg, #1a2744 0%, #1e3a5f 100%);
+    color: #f0ece4;
+    border-left: 4px solid var(--gold);
+  }
+  .project-card.fpa-featured:hover { background: linear-gradient(135deg, #1e2f55 0%, #22426d 100%); }
+  .project-card.fpa-featured .card-title { color: #f0ece4; }
+  .project-card.fpa-featured .card-desc { color: rgba(240,236,228,0.75); }
+  .project-card.fpa-featured .card-footer { border-top-color: rgba(255,255,255,0.12); }
+  .project-card.fpa-featured .tag { background: rgba(255,255,255,0.1); color: rgba(240,236,228,0.85); }
+  .project-card.fpa-featured .card-arrow { color: var(--gold); }
+
+  /* FP&A headline metrics row */
+  .fpa-metrics-row {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 1px; background: rgba(255,255,255,0.1);
+    margin: 1.2rem 0; border: 1px solid rgba(255,255,255,0.1);
+  }
+  .fpa-metric {
+    padding: 0.9rem 1rem; background: rgba(255,255,255,0.04);
+  }
+  .fpa-metric-val {
+    font-family: 'Playfair Display', serif; font-size: 1.4rem;
+    color: var(--gold-light); font-weight: 700; line-height: 1; display: block;
+  }
+  .fpa-metric-label {
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem;
+    color: rgba(240,236,228,0.5); letter-spacing: 0.08em;
+    text-transform: uppercase; margin-top: 0.25rem; display: block;
+  }
+
+  /* Download button */
+  .download-btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--gold); color: var(--deep);
+    padding: 0.55rem 1.2rem; font-size: 0.82rem; font-weight: 600;
+    text-decoration: none; letter-spacing: 0.03em;
+    transition: background 0.2s, transform 0.15s;
+    border: none; cursor: pointer; font-family: 'IBM Plex Sans', sans-serif;
+  }
+  .download-btn:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .download-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+  .github-btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    border: 1px solid rgba(255,255,255,0.25); color: rgba(240,236,228,0.8);
+    padding: 0.55rem 1.2rem; font-size: 0.82rem; font-weight: 500;
+    text-decoration: none; letter-spacing: 0.03em;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .github-btn:hover { border-color: var(--gold); color: var(--gold-light); }
+
+  .card-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 1rem; }
+
   .card-badge {
     font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; font-weight: 500;
     color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase;
@@ -256,13 +312,17 @@
     padding: 0.2rem 0.6rem; margin-bottom: 1rem;
   }
   .card-badge.featured { background: var(--gold); color: white; }
+  .card-badge.featured-dark { background: var(--gold); color: var(--deep); }
   .card-badge.green { background: var(--green-light); color: var(--green); }
   .card-badge.finance { background: #1a2744; color: #e8b96a; }
+  .card-badge.dim { background: rgba(255,255,255,0.12); color: rgba(240,236,228,0.7); }
+
   .card-title {
     font-family: 'Playfair Display', serif; font-size: 1.22rem;
     font-weight: 600; color: var(--deep); margin-bottom: 0.5rem; line-height: 1.3;
   }
   .card-sub { font-size: 0.83rem; color: var(--gold); font-weight: 500; margin-bottom: 0.8rem; }
+  .card-sub.light { color: var(--gold-light); }
   .card-desc { font-size: 0.9rem; color: #4a5568; line-height: 1.7; margin-bottom: 1.2rem; }
   .card-metrics { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1.3rem; }
   .metric-pill {
@@ -270,6 +330,7 @@
     color: var(--deep); background: #e8eff8; padding: 0.25rem 0.65rem;
   }
   .metric-pill.accent { background: rgba(201,144,58,0.12); color: #8a5c1a; }
+  .metric-pill.accent-light { background: rgba(201,144,58,0.2); color: var(--gold-light); }
   .metric-pill.green { background: var(--green-light); color: var(--green); }
   .card-footer {
     display: flex; justify-content: space-between; align-items: center;
@@ -329,17 +390,12 @@
     display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
     gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-top: 2.5rem;
   }
-  .edu-card {
-    background: white; padding: 1.8rem;
-  }
+  .edu-card { background: white; padding: 1.8rem; }
   .edu-label {
     font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;
     color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.6rem;
   }
-  .edu-title {
-    font-family: 'Playfair Display', serif; font-size: 1.05rem;
-    color: var(--deep); margin-bottom: 0.3rem;
-  }
+  .edu-title { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--deep); margin-bottom: 0.3rem; }
   .edu-sub { font-size: 0.88rem; color: var(--muted); margin-bottom: 0.4rem; }
   .edu-detail { font-size: 0.83rem; color: #6b7e96; line-height: 1.5; }
   .edu-status-active { font-size: 0.83rem; color: var(--green); font-weight: 500; margin-top: 0.5rem; }
@@ -389,6 +445,7 @@
     .cpa-banner { padding: 1.5rem; }
     .identity-strip { padding: 1.5rem; }
     .identity-pillar { border-right: none; border-bottom: 1px solid var(--rule); }
+    .fpa-metrics-row { grid-template-columns: repeat(2, 1fr); }
   }
 </style>
 </head>
@@ -413,7 +470,7 @@
     <p class="hero-sub">
       CA (ICAI) Intermediate · CPA Candidate (FAR, June 2026) · MS Business Analytics —
       4+ years turning financial records, actuarial datasets, and economic data into
-      variance reports, forecasting models, KPI dashboards, and executive-ready financial insights
+      variance reports, FP&A management packs, KPI dashboards, and executive-ready financial insights
       for insurance, corporate finance, and public-sector institutions.
     </p>
     <div class="hero-ctas">
@@ -472,8 +529,8 @@
   <div class="identity-inner">
     <div class="identity-pillar">
       <span class="identity-pillar-num">①</span>
-      <span class="identity-pillar-label">Financial Analysis First</span>
-      <span class="identity-pillar-desc">Variance analysis, profitability evaluation, forecasting, and financial reporting — grounded in CA ICAI and CPA-track training.</span>
+      <span class="identity-pillar-label">FP&A & Financial Reporting</span>
+      <span class="identity-pillar-desc">Budget vs actual, EBITDA bridge, variance analysis, and CFO management packs — grounded in CA ICAI and CPA-track training.</span>
     </div>
     <div class="identity-pillar">
       <span class="identity-pillar-num">②</span>
@@ -498,29 +555,29 @@
   <div class="section-wrap">
     <p class="section-label">Toolkit</p>
     <h2 style="color:#f0ece4;">Financial &amp; Analytical Skills</h2>
-    <p class="section-desc">Finance-first capabilities — from IFRS financial reporting and variance analysis to actuarial modeling and executive KPI dashboards.</p>
+    <p class="section-desc">Finance-first capabilities — from IFRS financial reporting and FP&A variance analysis to actuarial modeling and executive KPI dashboards.</p>
     <div class="skills-grid">
       <div class="skill-card primary">
         <span class="skill-icon">📒</span>
         <span class="skill-badge">Core Strength</span>
-        <p class="skill-title">Financial Analysis</p>
-        <p class="skill-items">Financial modeling · Variance analysis · Budget analysis · Profitability evaluation · Revenue trend analysis · Loss ratio analysis · Risk assessment · Scenario analysis · Financial forecasting</p>
+        <p class="skill-title">FP&A & Financial Analysis</p>
+        <p class="skill-items">Budget vs actual reporting · EBITDA bridge · Variance analysis · Margin analysis · Management commentary · Financial forecasting · Profitability evaluation · Scenario analysis · Revenue trend analysis</p>
       </div>
       <div class="skill-card primary">
         <span class="skill-icon">🏛️</span>
         <span class="skill-badge">Core Strength</span>
         <p class="skill-title">Accounting & Credentials</p>
-        <p class="skill-items">CA ICAI Intermediate · CPA Candidate (FAR, June 2026) · IFRS · Financial reporting · Cost accounting · Auditing · Taxation · Financial statement preparation</p>
+        <p class="skill-items">CA ICAI Intermediate · CPA Candidate (FAR, June 2026) · IFRS · Financial reporting · Cost accounting · Auditing · Taxation · FDIC/SOX compliance</p>
       </div>
       <div class="skill-card">
         <span class="skill-icon">📊</span>
         <p class="skill-title">Excel & Financial Modeling</p>
-        <p class="skill-items">Advanced Excel · Financial forecasting models · Budget vs. actual reporting · Scenario & sensitivity analysis · Pivot tables · Three-statement modeling</p>
+        <p class="skill-items">Advanced Excel · Financial forecasting models · Budget vs actual reporting · Scenario & sensitivity analysis · Pivot tables · Three-statement modeling · VBA automation</p>
       </div>
       <div class="skill-card">
         <span class="skill-icon">🐍</span>
         <p class="skill-title">Python & SQL</p>
-        <p class="skill-items">Pandas · NumPy · Scikit-learn · ETL pipelines · Actuarial data processing · Joins, CTEs, window functions · Regression modeling · Time series forecasting</p>
+        <p class="skill-items">Pandas · NumPy · Matplotlib · ETL pipelines · Actuarial data processing · Joins, CTEs, window functions · Regression modeling · Time series forecasting</p>
       </div>
       <div class="skill-card">
         <span class="skill-icon">📈</span>
@@ -530,7 +587,7 @@
       <div class="skill-card">
         <span class="skill-icon">🔬</span>
         <p class="skill-title">Economic & Statistical Methods</p>
-        <p class="skill-items">IMPLAN economic impact modeling · BLS & ACS Census data · Econometrics · Regression analysis · R (tidyverse) · Survey instrumentation (Qualtrics)</p>
+        <p class="skill-items">IMPLAN economic impact modeling · BLS & ACS Census data · Econometrics · Regression analysis · Survey instrumentation (Qualtrics)</p>
       </div>
     </div>
   </div>
@@ -543,10 +600,91 @@
     <h2>Financial Analytics Projects</h2>
     <p class="section-desc">Applied financial and business intelligence projects — real datasets, documented methodology, and executive-ready outputs.</p>
 
-    <!-- Cluster 1: Insurance Financial Analytics -->
+    <!-- Cluster 1: FP&A -->
     <div class="project-cluster">
       <div class="cluster-header">
         <span class="cluster-num">Cluster 1</span>
+        <span class="cluster-title">FP&A · Budget vs Actual · Management Reporting</span>
+      </div>
+      <div class="project-cards" style="grid-template-columns: 1fr;">
+        <!-- FEATURED FP&A CARD -->
+        <div class="project-card fpa-featured">
+          <div style="display:flex; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem;">
+            <span class="card-badge featured-dark">★ Featured · FP&A</span>
+            <span class="card-badge dim">New · January 2025</span>
+          </div>
+          <p class="card-title" style="font-size:1.45rem;">FP&A CFO Management Pack — US Financial Services Business Unit</p>
+          <p class="card-sub light">$151M revenue · 6 product lines · 12-month budget vs actual · EBITDA bridge · FY2025 outlook</p>
+
+          <!-- Headline metrics grid -->
+          <div class="fpa-metrics-row">
+            <div class="fpa-metric">
+              <span class="fpa-metric-val">$151M</span>
+              <span class="fpa-metric-label">FY Revenue</span>
+            </div>
+            <div class="fpa-metric">
+              <span class="fpa-metric-val">+1.5%</span>
+              <span class="fpa-metric-label">vs Budget ✅</span>
+            </div>
+            <div class="fpa-metric">
+              <span class="fpa-metric-val">47.1%</span>
+              <span class="fpa-metric-label">EBITDA Margin</span>
+            </div>
+            <div class="fpa-metric">
+              <span class="fpa-metric-val">-0.9pp</span>
+              <span class="fpa-metric-label">Margin Compression</span>
+            </div>
+          </div>
+
+          <p class="card-desc">
+            Full-year FP&A management pack for a US financial services business unit — analyzing $151M revenue
+            across 6 product lines with 12-month budget vs actual variance, EBITDA bridge, and product-level
+            cost overrun analysis. Revenue beat budget by +1.5% but costs grew +3.2%, compressing EBITDA margin
+            by 0.9pp. Technology (+13.5%) and Marketing (+11.2%) identified as primary overrun drivers.
+            Delivered a 7-slide CFO PowerPoint deck, SQL analytical queries (CTEs + window functions),
+            Python variance charts, and a 5-action FY2025 management outlook — all in USD with FDIC compliance context.
+          </p>
+
+          <div class="card-metrics">
+            <span class="metric-pill accent-light">EBITDA bridge</span>
+            <span class="metric-pill accent-light">Variance analysis</span>
+            <span class="metric-pill accent-light">Management commentary</span>
+            <span class="metric-pill accent-light">Cost overrun analysis</span>
+            <span class="metric-pill accent-light">FY2025 outlook</span>
+          </div>
+
+          <div class="card-actions">
+            <a class="download-btn" href="https://github.com/samipdk/fpa-budget-variance-fy2024/raw/main/FPA_CFO_Management_Pack_FY2024.pptx" download>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3"/>
+              </svg>
+              Download CFO Report (PPTX)
+            </a>
+            <a class="github-btn" href="https://github.com/samipdk/fpa-budget-variance-fy2024" target="_blank">
+              View on GitHub →
+            </a>
+          </div>
+
+          <div class="card-footer" style="margin-top:1.2rem;">
+            <div class="card-tags">
+              <span class="tag">SQL</span>
+              <span class="tag">Python</span>
+              <span class="tag">Power BI</span>
+              <span class="tag">Excel</span>
+              <span class="tag">FP&A</span>
+              <span class="tag">EBITDA Bridge</span>
+              <span class="tag">Variance Analysis</span>
+            </div>
+            <span class="card-arrow">↗</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cluster 2: Insurance Financial Analytics -->
+    <div class="project-cluster">
+      <div class="cluster-header">
+        <span class="cluster-num">Cluster 2</span>
         <span class="cluster-title">Insurance & Actuarial Financial Analytics</span>
       </div>
       <div class="project-cards">
@@ -567,7 +705,6 @@
             <span class="metric-pill accent">~20% accuracy gain</span>
             <span class="metric-pill accent">~25% faster reporting</span>
             <span class="metric-pill">Claims ratio · Loss ratio · Underwriting margin</span>
-            <span class="metric-pill">Variance analysis · Revenue trends</span>
           </div>
           <div class="card-footer">
             <div class="card-tags">
@@ -576,7 +713,6 @@
               <span class="tag">Python</span>
               <span class="tag">SQL</span>
               <span class="tag">Actuarial Data</span>
-              <span class="tag">Excel</span>
             </div>
             <span class="card-arrow">↗</span>
           </div>
@@ -584,43 +720,7 @@
       </div>
     </div>
 
-    <!-- Cluster 2: Financial Forecasting & Modeling -->
-    <div class="project-cluster">
-      <div class="cluster-header">
-        <span class="cluster-num">Cluster 2</span>
-        <span class="cluster-title">Financial Forecasting & FP&A Modeling</span>
-      </div>
-      <div class="project-cards">
-        <div class="project-card">
-          <span class="card-badge finance">FP&amp;A · In Progress</span>
-          <p class="card-title">Financial Forecasting & Variance Analysis Model</p>
-          <p class="card-sub">Excel · Python · Power BI · Multi-scenario modeling</p>
-          <p class="card-desc">
-            Multi-scenario financial forecasting model with budget-vs-actual variance tracking
-            and revenue/cost projection. Built to demonstrate core FP&A analytical skills —
-            revenue forecasting, cost modeling, sensitivity analysis, and performance reporting
-            formatted for executive review.
-          </p>
-          <div class="card-metrics">
-            <span class="metric-pill accent">Budget vs. actual tracking</span>
-            <span class="metric-pill accent">Scenario analysis</span>
-            <span class="metric-pill">Revenue & cost projections</span>
-            <span class="metric-pill">Executive reporting format</span>
-          </div>
-          <div class="card-footer">
-            <div class="card-tags">
-              <span class="tag">Excel</span>
-              <span class="tag">Python</span>
-              <span class="tag">Power BI</span>
-              <span class="tag">Financial Modeling</span>
-            </div>
-            <span class="card-arrow">↗</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Cluster 3: Economic & Labor Market Financial Analytics -->
+    <!-- Cluster 3: Economic & Labor Market -->
     <div class="project-cluster">
       <div class="cluster-header">
         <span class="cluster-num">Cluster 3</span>
@@ -641,7 +741,6 @@
             <span class="metric-pill accent">10+ industry sectors</span>
             <span class="metric-pill accent">10+ Kansas regions</span>
             <span class="metric-pill">Wage disparity analysis</span>
-            <span class="metric-pill">Post-COVID employment trends</span>
           </div>
           <div class="card-footer">
             <div class="card-tags">
@@ -662,19 +761,15 @@
             Financial ROI analysis calculating 10-year student returns across 90 Midwest public universities —
             replicating Georgetown CEW methodology using College Scorecard earnings data and IPEDS net price.
             Evaluating ROI by institution type, program category, and Pell recipient status.
-            Delivered as a written analytical report with financial modeling and visualizations.
           </p>
           <div class="card-metrics">
             <span class="metric-pill accent">90 institutions</span>
             <span class="metric-pill">10-year ROI modeling</span>
-            <span class="metric-pill">Georgetown CEW methodology</span>
-            <span class="metric-pill">Pell vs. non-Pell analysis</span>
           </div>
           <div class="card-footer">
             <div class="card-tags">
               <span class="tag">Python</span>
               <span class="tag">SQL</span>
-              <span class="tag">College Scorecard</span>
               <span class="tag">Financial Modeling</span>
             </div>
             <span class="card-arrow">↗</span>
@@ -726,7 +821,6 @@
           <li>Conducted financial performance analysis across product lines — delivering <strong>variance reports and revenue trend insights</strong> that supported pricing strategy and risk management decisions</li>
           <li>Built Power BI KPI dashboards tracking claims ratio, premium growth, policy lapse rates, and underwriting margin — with RAG status and YoY trend analysis for senior leadership</li>
           <li>Developed Python ETL pipelines for actuarial dataset transformation — improving financial data accuracy by <strong>~20%</strong> and reducing reporting turnaround by <strong>~25%</strong></li>
-          <li>Prepared structured financial performance reports and executive briefs translating actuarial and claims data into clear financial narratives for strategic planning</li>
         </ul>
       </div>
     </div>
@@ -741,7 +835,6 @@
           <li>Performed quantitative financial analysis across <strong>budgets, balance sheets, income statements, and client portfolios</strong> — delivering recommendations for investment strategy and financial planning</li>
           <li>Built Excel-based financial models for forecasting, profitability evaluation, and scenario analysis for internal and client-facing reporting</li>
           <li>Supported audit and compliance workflows — reviewing financial records, applying <strong>IFRS</strong> and local accounting standards, and preparing structured reports</li>
-          <li>Assisted with tax computation, cost accounting, and financial statement preparation aligned with IFRS and local regulatory requirements</li>
         </ul>
       </div>
     </div>
@@ -754,7 +847,7 @@
         <p class="exp-focus">IMPLAN · BLS Data · Financial Briefs · Economic Impact Modeling</p>
         <ul class="exp-bullets">
           <li>Conduct IMPLAN input-output analyses quantifying direct, indirect, and induced economic contributions across <strong>10+ Kansas regions</strong> — producing GDP impact estimates and employment multipliers for published stakeholder reports</li>
-          <li>Build Python time series models analyzing employment dynamics, wage trends, and labor force participation — delivering findings through executive-ready Power BI dashboards</li>
+          <li>Build Python time series models analyzing employment dynamics and labor force participation — delivering findings through executive-ready Power BI dashboards</li>
           <li>Synthesize multi-source datasets — BLS, Census, and primary survey data — into <strong>financial and economic briefs</strong> informing resource allocation and investment decisions for Kansas public-sector partners</li>
           <li>Co-designed business sentiment survey instruments in Qualtrics — integrating primary data into economic impact models and presenting findings to institutional stakeholders</li>
         </ul>
@@ -810,7 +903,7 @@
     <p class="section-label" style="justify-content:center;">Let's Connect</p>
     <h2 style="color:#f0ece4;">Open to <em style="font-style:italic; color:var(--gold-light);">new opportunities</em></h2>
     <p class="contact-tagline">
-      Financial Analyst · CPA Candidate · CA (ICAI) Intermediate<br>
+      Financial Analyst · FP&A · CPA Candidate · CA (ICAI) Intermediate<br>
       Wichita, KS · Available May 2026 · F-1 OPT (STEM eligible)
     </p>
     <div class="contact-links">
