@@ -250,7 +250,6 @@
   .project-card:hover { background: #faf9f6; }
   .project-card:hover .card-arrow { transform: translate(3px,-3px); }
 
-  /* FEATURED FP&A CARD — full-width special treatment */
   .project-card.fpa-featured {
     background: linear-gradient(135deg, #1a2744 0%, #1e3a5f 100%);
     color: #f0ece4;
@@ -263,7 +262,6 @@
   .project-card.fpa-featured .tag { background: rgba(255,255,255,0.1); color: rgba(240,236,228,0.85); }
   .project-card.fpa-featured .card-arrow { color: var(--gold); }
 
-  /* FP&A headline metrics row */
   .fpa-metrics-row {
     display: grid; grid-template-columns: repeat(4, 1fr);
     gap: 1px; background: rgba(255,255,255,0.1);
@@ -282,7 +280,6 @@
     text-transform: uppercase; margin-top: 0.25rem; display: block;
   }
 
-  /* Download button */
   .download-btn {
     display: inline-flex; align-items: center; gap: 0.5rem;
     background: var(--gold); color: var(--deep);
@@ -468,7 +465,7 @@
     <p class="hero-eyebrow">Financial Analyst · CPA Candidate · Wichita, KS</p>
     <h1>Samip <em>Thakuri</em></h1>
     <p class="hero-sub">
-      CA (ICAI) Intermediate · CPA Candidate (FAR, June 2026) · MS Business Analytics —
+      MBA (Finance) · CA (ICAI) Intermediate · CPA Candidate (FAR, June 2026) · MS Business Analytics —
       4+ years turning financial records, actuarial datasets, and economic data into
       variance reports, FP&A management packs, KPI dashboards, and executive-ready financial insights
       for insurance, corporate finance, and public-sector institutions.
@@ -509,6 +506,10 @@
     </div>
     <div class="cpa-credentials">
       <div class="cred-item">
+        <p class="cred-title">MBA, Finance</p>
+        <p class="cred-desc">Pokhara University, Nepal — 2021. Graduate business education with a finance concentration covering financial management, corporate finance, and investment analysis.</p>
+      </div>
+      <div class="cred-item">
         <p class="cred-title">CA ICAI Intermediate</p>
         <p class="cred-desc">Institute of Chartered Accountants of India — both groups completed. Financial Reporting, Cost & Management Accounting, Taxation, Auditing, Financial Management.</p>
       </div>
@@ -530,7 +531,7 @@
     <div class="identity-pillar">
       <span class="identity-pillar-num">①</span>
       <span class="identity-pillar-label">FP&A & Financial Reporting</span>
-      <span class="identity-pillar-desc">Budget vs actual, EBITDA bridge, variance analysis, and CFO management packs — grounded in CA ICAI and CPA-track training.</span>
+      <span class="identity-pillar-desc">Budget vs actual, EBITDA bridge, variance analysis, and CFO management packs — grounded in MBA Finance, CA ICAI, and CPA-track training.</span>
     </div>
     <div class="identity-pillar">
       <span class="identity-pillar-num">②</span>
@@ -567,7 +568,7 @@
         <span class="skill-icon">🏛️</span>
         <span class="skill-badge">Core Strength</span>
         <p class="skill-title">Accounting & Credentials</p>
-        <p class="skill-items">CA ICAI Intermediate · CPA Candidate (FAR, June 2026) · IFRS · Financial reporting · Cost accounting · Auditing · Taxation · FDIC/SOX compliance</p>
+        <p class="skill-items">MBA Finance (Pokhara University) · CA ICAI Intermediate · CPA Candidate (FAR, June 2026) · IFRS · Financial reporting · Cost accounting · Auditing · Taxation · FDIC/SOX compliance</p>
       </div>
       <div class="skill-card">
         <span class="skill-icon">📊</span>
@@ -607,7 +608,6 @@
         <span class="cluster-title">FP&A · Budget vs Actual · Management Reporting</span>
       </div>
       <div class="project-cards" style="grid-template-columns: 1fr;">
-        <!-- FEATURED FP&A CARD -->
         <div class="project-card fpa-featured">
           <div style="display:flex; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem;">
             <span class="card-badge featured-dark">★ Featured · FP&A</span>
@@ -615,8 +615,6 @@
           </div>
           <p class="card-title" style="font-size:1.45rem;">FP&A CFO Management Pack — US Financial Services Business Unit</p>
           <p class="card-sub light">$151M revenue · 6 product lines · 12-month budget vs actual · EBITDA bridge · FY2025 outlook</p>
-
-          <!-- Headline metrics grid -->
           <div class="fpa-metrics-row">
             <div class="fpa-metric">
               <span class="fpa-metric-val">$151M</span>
@@ -635,7 +633,6 @@
               <span class="fpa-metric-label">Margin Compression</span>
             </div>
           </div>
-
           <p class="card-desc">
             Full-year FP&A management pack for a US financial services business unit — analyzing $151M revenue
             across 6 product lines with 12-month budget vs actual variance, EBITDA bridge, and product-level
@@ -644,7 +641,6 @@
             Delivered a 7-slide CFO PowerPoint deck, SQL analytical queries (CTEs + window functions),
             Python variance charts, and a 5-action FY2025 management outlook — all in USD with FDIC compliance context.
           </p>
-
           <div class="card-metrics">
             <span class="metric-pill accent-light">EBITDA bridge</span>
             <span class="metric-pill accent-light">Variance analysis</span>
@@ -652,7 +648,6 @@
             <span class="metric-pill accent-light">Cost overrun analysis</span>
             <span class="metric-pill accent-light">FY2025 outlook</span>
           </div>
-
           <div class="card-actions">
             <a class="download-btn" href="https://github.com/samipdk/fpa-budget-variance-fy2024/raw/main/FPA_CFO_Management_Pack_FY2024.pptx" download>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
@@ -664,7 +659,6 @@
               View on GitHub →
             </a>
           </div>
-
           <div class="card-footer" style="margin-top:1.2rem;">
             <div class="card-tags">
               <span class="tag">SQL</span>
@@ -870,6 +864,12 @@
         <p class="edu-status-active">Active candidate</p>
       </div>
       <div class="edu-card">
+        <p class="edu-label">Graduate Degree · 2021</p>
+        <p class="edu-title">MBA, Finance</p>
+        <p class="edu-sub">Pokhara University, Nepal</p>
+        <p class="edu-detail">Financial Management · Corporate Finance · Investment Analysis · Business Strategy</p>
+      </div>
+      <div class="edu-card">
         <p class="edu-label">Accounting Credential</p>
         <p class="edu-title">CA ICAI Intermediate</p>
         <p class="edu-sub">Institute of Chartered Accountants of India</p>
@@ -903,7 +903,7 @@
     <p class="section-label" style="justify-content:center;">Let's Connect</p>
     <h2 style="color:#f0ece4;">Open to <em style="font-style:italic; color:var(--gold-light);">new opportunities</em></h2>
     <p class="contact-tagline">
-      Financial Analyst · FP&A · CPA Candidate · CA (ICAI) Intermediate<br>
+      MBA (Finance) · Financial Analyst · FP&A · CPA Candidate · CA (ICAI) Intermediate<br>
       Wichita, KS · Available May 2026 · F-1 OPT (STEM eligible)
     </p>
     <div class="contact-links">
